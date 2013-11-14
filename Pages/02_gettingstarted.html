@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <title>Lecture 2- Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="span12">
+          <nav class="navbar">
+            <div class="navbar-inner">
+
+            <!-- this is a title, if you put it here then it becomes part of the nav-->
+              <h1><a href="”#”">iOS Introduction</a></h1>
+              <a href="#" class="brand">Crash Course</a>
+
+              <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li><a href="./lecture_1.html">Lecture 1</a></li>
+                <li class="divider-vertical"></li>
+                <li class="active"><a href="./lecture_2.html">Lecture 2</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="./lecture_3.html">Lecture 3</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="./misc.html">Miscellanious</a></li>
+                <li class="divider-vertical"></li>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class="span2">
+        </div>
+
+        <div class="span10">
+                <a href="https://docs.google.com/presentation/d/1C1jTSQFpiSwwCvq4_GXouiPT1kY-4t0r1P1jL7COviA/edit?usp=sharing">Lecture 2 Slides</a>
+
+          <h3>Introduction</h3>    
+
+	<p>In this section, we will go over the following topics<p>
+	<ul>
+	   <li>Objective-C Syntax</li>
+	   
+	   <li>Subclassing View Controllers</li>
+	</ul>
+
+	<section id = "Objective-C">
+	  <div class = "page-header">
+          <h3>Objective-C</h3> 
+
+	   <h4>What is Objective-C</h4>
+
+	<p>Starting off, Objectve-c is a strict object-orientated superset of C. What this means is that Objective-C shares largely the same syntax and conventions as C but with a more objective-orientated rather than procedural focus. It is also the language used to develop apps for Apple’s iOS Devices. The language itself does take a little getting used to but for anyone who has done C before the transition shouldn’t be too difficult. Likewise, if you’ve never programmed in C it's pretty easy to pick up after a short inital learning curve.<p>
+
+	   <h4>Similarities to C</h4>
+
+	    <h5>Headers and Implementation Files</h5>
+	<p>Objective C also makes use of header and implementation files (.h and .m respectively). The header file is where the interface of a class is defined and includes publically visible variables, methods and import statements. The implementation file is where the implementation of the class goes and is where the majority of coding is done.<p>
+
+<div class="well">
+                <a href="./img/lecture_2/code_header.png">
+                  <img src="./img/lecture_2/code_header.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: left;"> 
+                  <em> An example header.</em>
+ 		</div>
+ </div>
+
+<div class="well">
+                <a href="./img/lecture_2/code_implementation.png">
+                  <img src="./img/lecture_2/code_implementation.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: left;"> 
+                  <em> An example implementation file.</em>
+ 		</div>
+ </div>
+
+	   <h4>Objective-C Conventions</h4>
+
+	    <h5>Syntax-Method Declarations</h5>
+	<p>You've probably noticed by now that methods in objective-c are lengthy. This is because methods in objective c are designed to be read like sentences.<p>
+ <div class="well">
+                <a href="./img/lecture_2/syntax_method.jpg">
+                  <img src="./img/lecture_2/syntax_method.jpg" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: left;"> 
+                  <em> A commonly used method in the NSArray Class.</em>
+ 		</div>
+ </div>
+	<ul>
+	  <li>Method type
+	- a "+" means this is a class method. Likewise a "-" denotes an instance method</li>
+	  <li>Return type
+	- In this instance the return type is void</li>
+	  <li>Method Signature Keywords
+	- the separate parts of the method name InsertObject:atIndex. 
+	Unlike most of java the method is treated like separate blocks</li>
+	  <li>Argument types
+	- Parameter types that the method are asking for. In this case "id" and "NSUInteger"</li>
+	  <li>Parameter names
+	-Just the names of the objects you are feeding the method: an id named anObject and an NSUInteger named Index</li>
+	</ul>
+
+	<p>Nothing too hard here and you can kind of see that the method declaration does read almost like a coherent sentence "Insert object anObject at index index."<p>
+
+	<p>This could all be a pain to write by yourself so luckily Objective-C supports autocomplete! Most of the time when you're writing out a method xcode will display methods that most match what you are currently writing. Just press tab and done. Easy!<p>
+
+	  <h5>Syntax-Messaging/Method Calls</h5>
+	<p>In java and many other languges, the most commonly used notation for method calls is the dot notation. For example,<p>
+
+	<p>		object.doSomething(Stuff, moreStuff);<p>
+
+	<p>Objective-C is different in that it uses a messaging notation which is denoted by square brackets<p> 
+
+	<p>             [object doSomethingwith:stuff andThen:moreStuff];<p>
+
+	<p>where the usual "(" is replaced with ":" and methods with more than one parameter generally split the method call name. The general form for a multi parameter method call usually looks like this<p>
+
+	<p>             [object  methodPart1 :parameter1  methodPart2 :parameter2];<p>
+
+
+	<p>Look back at the picture of the insertObject:atIndex method. To call this method we would say [array insertObject:object atIndex:int] where array is the object name .<p>
+
+
+	   <h5>Syntax-Objects</h5>
+	<p>When declaring an object objective-c uses two phrases "alloc" and "init"<p>
+	
+<div class="well">
+                <a href="./img/lecture_2/method_insert.png">
+                  <img src="./img/lecture_2/method_insert.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: left;"> 
+                 
+ 		</div>
+ </div>
+
+	<ul>
+	  <li>Alloc-Allocates space in memory</li>
+	  <li>init-Calls the constructor</li>
+	</ul>
+
+	<p>Just a heads up objective-c does use pointers! if you don't know pointers they basically just point to memory locations. That way the  variable can just store an address instead of the whole object which saves memory.<p>
+
+	   <h5>Syntax-Properties</h5>
+	<p>Properties are well..properties that you can assign to variables which is usally done within the header file. Some commonly used properties include:<p>
+
+	<ul>
+	  <li>weak/strong-This is the same as retain</li>
+	  <li>nonatomic</li>
+	</ul>
+
+<div class="well">
+                <a href="./img/lecture_2/property_dec.png">
+                  <img src="./img/lecture_2/property_dec.png" class="img-rounded"> 
+                </a>
+                
+                <div style="text-align: left;"> 
+		  <em>Example of property usage in a header file.</em>
+		</div>
+ </div>
+
+	  <h4>Commonly Used Data Structures</h4>
+	
+	<p>Most of the data structures in Objective-C are pretty much similar to their counterparts in other languages<p>
+
+	   <h5>NSArray</h5>
+	<p>Basic Array class<p>
+
+<div class="well">
+                <a href="./img/lecture_2/array.png">
+                  <img src="./img/lecture_2/array.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: left;"> 
+                  <em> NSArray class and example implementation.</em>
+ 		</div>
+ </div>
+
+	   <h5>NSString</h5>
+	<p>Basic String class<p>
+
+<div class="well">
+                <a href="./img/lecture_2/method_create_book.png">
+                  <img src="./img/lecture_2/method_create_book.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: left;"> 
+                  <em> An example usage of an NSString.</em>
+ 		</div>
+ </div>
+
+
+	   <h5>NSDictionary</h5>
+	<p>Storage object that sorts items based on a "key". Calling with the key returns the data at that key location.
+
+<div class="well">
+                <a href="./img/lecture_2/dict.png">
+                  <img src="./img/lecture_2/dict.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: left;"> 
+                  <em> NSDictionary class and example implementation.</em>
+ 		</div>
+ </div>
+
+
+	<p>If you ever find yourself stumped about anything data structure related apple has some excellent documentation at https://developer.apple.com/library/mac/navigation/<p>
+ 
+		</div>
+
+ <h3>MadInstagram Tutorial</h3>
+	      <p> From this point on we'll be using the UMadInstagram project
+              <p>The MadInstagram app will have 4 ViewControllers:
+                <ul>
+                  <li>CommentViewController- displays a list of all of the Instagram names and comments. Clicking on a cell will segue to the ImageViewController</li>
+                  <li>ImagesTableViewController- shows the image of the associated Instagram post as well as comments and metadata</li>
+                  <li>HomeViewController- the first view controller that appears when the app launches, offering segues to SettingsViewController and ImageViewController</li>
+                  <li>SettingsViewController- offers simple options for changing the behavior of the app</li>
+                </ul>
+              </p>
+
+              <p>We will be using a UINavigationController to support the structure of the app. Normally this is not counted among the unique ViewControllers of an application-- Navigation Controllers are very common!</p>
+
+              <div class="alert alert-info">
+                <h5>Adding UINavigationController to MadInstagram with a new Root View Controller</h5>
+                <ol>
+                  <li>Select the storyboard file in the project navigator in the left pane and delete any ViewControllers present</li>
+                  <li>Find a UINavigationController in the bottom right corner in the objects tab, drag it onto the screen</li>
+                  <li>Select the stock UITableViewController included with the Navigation controller and delete it (we want a normal view controller, not a table!)</li>
+                  <li>Drag a stock UIViewController from the objects pane onto the screen.</li>
+                  <li>Right click and drag from the NavigationController to the new ViewController and select "root view controller" from the resulting popup</li>
+                </ol>
+              </div>
+
+<div class="well">
+                <a href="./img/lecture_2/view_controller.png">
+                  <img src="./img/lecture_2/view_controller.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: center;"> 
+                  <em>Be sure to select root view controller</em>
+ 		</div>
+ </div>
+
+              <p>At this point your storyboard should only contain these two ViewControllers. Use the process described above to add two more UIViewControllers onto the storyboard and one UITableViewController. UITableViewController is a pre-built view controller that only contains a table. It is used for simple display of options or sets of data and is exactly what we need to list images.</p>
+
+<div class="well">
+                <a href="./img/lecture_2/added_controllers.png">
+                  <img src="./img/lecture_2/added_controllers.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: center;"> 
+                  <em> Your storyboard should look something like this.</em>
+ 		</div>
+ </div>
+
+              <p>Your storyboard should now have all of the view controllers we need for the app, but none of them have do anything teribly useful- they're all stock UIViewControllers! To get any special functionality we need to subclass them. </p>
+
+              <div class="alert alert-info">
+                <h5>Creating the HomeViewController subclass of UIViewController</h5>
+
+                <p>This example demonstrates how to subclass a UIViewController specifically for HomeViewController; change the name to repeat the process for the other view controllers.</p>
+
+                <ol>
+                  <li>Go to File > New > File</li>
+                  <li>Ensure the category is "Cocoa Touch" and the template is "Objective-C class." Click "Next"</li>
+                  <li>In this page you must name your new subclass. Enter "HomeViewController" in the class field and ensure that "subclass of" is UIViewController. Click next and then create.</li>
+                </ol>
+              </div>
+
+<div class="well">
+                <a href="./img/lecture_2/subclassing.png">
+                  <img src="./img/lecture_2/subclassing.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: center;"> 
+                 
+ 		</div>
+ </div>
+
+              <p>Repeat the process above for CommentViewController and SettingsViewController. Creating ImagesTableViewController follows the same steps except that you should enter "UITableViewController" in the "subclass of" field.</p>
+
+              <p>Note the new source code files visible in the project navigator. Each time you created a view controller the source code files were added to the existing project. One more step seperates us from actually using the view controllers, however. We must let InterfaceBuilder know that the view controllers placed in the storboard are the subclasses we just created.</p>
+
+              <div class="alert alert-info">
+                <h5>Change View Controller Classes</h5>
+                <ol>
+                  <li>Select the storyboard file to bring up InterfaceBuilder</li>
+                  <li>Click on a view controller. Select the identity inspector in the right-hand pane</li>
+                  <li>Enter the name of the subclass as pictured.</li>
+                </ol>
+<div class="well">
+                <a href="./img/lecture_2/subclassing_story.png">
+                  <img src="./img/lecture_2/subclassing_story.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: center;"> 
+                  <em> Subclassing HomeViewController. Notice that the name is entered on the top right. </em>
+ 		</div>
+ </div>
+
+<div class="well">
+                <a href="./img/lecture_2/subclassing_all.png">
+                  <img src="./img/lecture_2/subclassing_all.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: center;"> 
+                  <em> This is what it should look like after all controllers have been subclassed.</em>
+ 		</div>
+ </div>
+              </div>
+
+
+	      <p>Now that we subclassed our view controllers we'll have more options when working with the project. Before we do that though we're going to add some views to our controllers. 
+
+              <div class="alert alert-info">
+                <h5>Adding a UIView to a View Controller</h5>
+                <ol>
+                  <li>drag a uiview onto the CommentImageView's view</li>
+                </ol>
+              </div>
+
+              <p>Add the view to the view controller so that it looks like the image below.</p>
+
+<div class="well">
+                <a href="./img/lecture_2/adding_imageview.png">
+                  <img src="./img/lecture_2/adding_imageview.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: center;"> 
+                  <em> Placing the Image View object into the View controller.</em>
+ 		</div>
+ </div>
+
+              <p>Even though the views are present in the view controller's views, the controllers still don't have access to the views. We use two kinds of connections to inform view controllers of their subviews, IBActions and IBOutlets.</p>
+
+              <ul>
+                <li>IBAction- used to connect actions to controllers, most commonly button clicks</li>
+                <li>IBOutlet- allows a controller to access a UIView at runtime. Examples: setting image, text, or size programatically</li>
+              </ul>
+
+              <p>Braces in header files denote private instance variables. You should connect IBOutlets inside of the braces and IBActions outside.</p>
+
+              <div class="alert alert-info">
+                <h5>Connecting Subviews to Controllers</h5>
+                <ol>
+                  <li>Make sure the assistant editor is selected</li>
+                  <li>Click on the subclass name and make sure its the header version of the source code file</li>
+                  <li>Right-click drag from the UIView to the header file</li>
+		  <li>Name this view "imageMain"</li>
+                </ol>
+              </div>
+
+<div class="well">
+                <a href="./img/lecture_2/connecting_view.png">
+                  <img src="./img/lecture_2/connecting_view.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: center;"> 
+                  <em> Connecting the view object to the CommentViewController. The assistant editor is the suit icon on the top right</em>
+ 		</div>
+ </div>
+
+		<p>in the meantime, let's also add a text view<p>
+
+<div class="alert alert-info">
+                <h5>Adding a UITextView</h5>
+                <ol>
+		  <li>Drag a text view object into the CommentViewController
+                  <li>Make sure the assistant editor is selected</li>
+                  <li>Click on the subclass name and make sure its the header version of the source code file</li>
+                  <li>Right-click drag from the UITextView to the header file</li>
+		  <li>Name this view "textViewComment"</li>
+                </ol>
+              </div>
+
+
+
+<div class="well">
+                <a href="./img/lecture_2/textview.png">
+                  <img src="./img/lecture_2/textview.png" class="img-rounded"> 
+                </a>
+
+                <div style="text-align: center;"> 
+                  <em> Adding a text view to the CommentViewcontroller.</em>
+ 		</div>
+ </div>
+
+<p>That should be good for now! In the next lecture we'll go over displaying pictures using these IBOutlets.
+
+        </div>
+      </div>
+
+      <div class="row" id="main-content"></div>
+      <footer class="row">
+        <hr>
+      </footer>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
