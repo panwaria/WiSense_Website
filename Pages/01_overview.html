@@ -1,11 +1,38 @@
-?<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
   <meta charset="utf-8">
     <title>WiSense</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="shortcut icon" href="./img/wisenseicon.ico">
+	
+	<style type="text/css">
+
+.hovergallery img{
+  -webkit-transform:scale(1.0); /*Webkit: Scale down image to 0.8x original size*/
+  -moz-transform:scale(1.0); /*Mozilla scale version*/
+  -o-transform:scale(1.0); /*Opera scale version*/
+  -webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+  -moz-transition-duration: 0.5s; /*Mozilla duration version*/
+  -o-transition-duration: 0.5s; /*Opera duration version*/
+  opacity: 1.0; /*initial opacity of images*/
+  margin: 0 10px 5px 0; /*margin between images*/
+}
+
+.hovergallery img:hover{
+  -webkit-transform:scale(1.2); /*Webkit: Scale up image to 1.2x original size*/
+  -moz-transform:scale(1.2); /*Mozilla scale version*/
+  -o-transform:scale(1.2); /*Opera scale version*/
+  box-shadow:0px 0px 30px gray; /*CSS3 shadow: 30px blurred shadow all around image*/
+  -webkit-box-shadow:0px 0px 30px gray; /*Safari shadow version*/
+  -moz-box-shadow:0px 0px 30px gray; /*Mozilla shadow version*/
+  opacity: 1;
+}
+</style>
+	
+	
   </head>
   
   <body>
@@ -16,7 +43,7 @@
             <div class="navbar-inner">
 
             <!-- this is a title, if you put it here then it becomes part of the nav-->
-              <h1><a href="”#”">WiSense</a></h1>
+              <h1><a href="./01_overview.html">WiSense</a></h1>
 			  <h5>Realtime non-WiFi Device Detection in your pocket!</h5>
 
               <ul class="nav">
@@ -53,7 +80,7 @@
 			 
           	 	  <section id="overview">
             	  		<h3>Overview</h3>
-            	  		<p>WiSense is an Android based platform being developed by the WiNGS Lab at the University of Wisconsin-Madison for wireless debugging and diagnosis in both enterprise and home WLANs. The platform allows users to analyze the channel quality, monitor the signal quality of neighboring WLANs and detect the presence of neighboring non-WiFi activity. The ease of usage and mobility provided by handheld device platforms can allow network administrators as well as users to identify location specific wireless performance issues in their WLANs. This tool is also being developed as part of our group's efforts to collect data about wireless performance at different locations and share it with the community. </p>
+            	  		<p align="justify">WiSense is an Android based platform being developed by the WiNGS Lab at the University of Wisconsin-Madison for wireless debugging and diagnosis in both enterprise and home WLANs. The platform allows users to analyze the channel quality, monitor the signal quality of neighboring WLANs and detect the presence of neighboring non-WiFi activity. The ease of usage and mobility provided by handheld device platforms can allow network administrators as well as users to identify location specific wireless performance issues in their WLANs. This tool is also being developed as part of our group's efforts to collect data about wireless performance at different locations and share it with the community. </p>
 						<p>So, in brief, WiSense lets you:</p>
                         <ul>
                              <li>Analyze wireless activity on different channels.</li>
@@ -62,7 +89,7 @@
 							 <li>Scan neighboring access SSIDs..</li>
                         </ul>
 						
-						<p>Please watch the small introduction video to get a feel of WiSense:</p>
+						<p align="justify">Please watch the small introduction video to get a feel of WiSense:</p>
 						<center><embed align="center" width="700" height="345" src="http://www.youtube.com/v/8gRVVAy-Uqs" type="application/x-shockwave-flash"/></center>
 						
 						<br>						
@@ -73,70 +100,70 @@
             	  		<div class="page-header">
               			   	 <h3>Features</h3>
 							 
-							 <p>Following is the breakdown of different capabilities provided by WiSense-</p>
+							 <p align="justify">Following is the breakdown of different capabilities provided by WiSense-</p>
 							 
-							 <h4>Spectrum Heat Map</h4>
 							  <div class="row">
-			 				  	   <div class="span2">
-								   		<a href="./img/overview/01_heat.jpg"><img src="./img/overview/01_heat.jpg" class="img-rounded"></a>
+			 				  	   <div class="span3">
+								   		<a class="hovergallery" href="./img/overview/01_heat.jpg"><img src="./img/overview/01_heat.jpg" class="img-rounded"></a>
 								   </div>
-								   <div class="span7">
-								   		<p>Using WiSense, users can analyze heat map of the spectrum for different channels in real-time through a waterfall display.</p>
+								   <div class="span6">
+								   		<h4>Spectrum Heat Map</h4>
+								   		<p align="justify">Using WiSense, users can analyze heat map of the spectrum for different channels in real-time through a waterfall display.</p>
 								   </div>
 							  </div>
 							  <br>
 							  
-							  <h4>Events</h4>
 							  <div class="row">
-			 				  	   <div class="span2">
-								   		<a href="./img/overview/02_event.jpg"><img src="./img/overview/02_event.jpg" class="img-rounded"></a>
+								   <div class="span6">
+								   		<h4 align = "right">Events</h4>
+								   		<p align="justify">Users can also see what all non-Wifi devices, interfering with their WiFi, have been detected by the application. WiSense also provides other details about the detected devices such as their non-WiFi signal strengths, theri operating frequency bandwidth and channel information. Apart from the current real-time activity, application keeps track of eariler detected activity as well.</p>
 								   </div>
-								   <div class="span7">
-								   		<p>Users can also see what all non-Wifi devices, interfering with their WiFi, have been detected by the application. WiSense also provides other details about the detected devices such as their non-WiFi signal strengths, theri operating frequency bandwidth and channel information. Apart from the current real-time activity, application keeps track of eariler detected activity as well.</p>
+								   <div class="span3">
+								   		<a class="hovergallery" href="./img/overview/02_event.jpg"><img src="./img/overview/02_event.jpg" class="img-rounded"></a>
 								   </div>
 							  </div>
 							  <br>
 							  
-							  <h4>Non-WiFi Detected Devices</h4>
 							  <div class="row">
-			 				  	   <div class="span2">
-								   		<a href="./img/overview/03_device.jpg"><img src="./img/overview/03_device.jpg" class="img-rounded"></a>
+			 				  	   <div class="span3">
+								   		<a class="hovergallery" href="./img/overview/03_device.jpg"><img src="./img/overview/03_device.jpg" class="img-rounded"></a>
 								   </div>
-								   <div class="span7">
-								   		<p>Users can also see what all non-Wifi devices, interfering with their WiFi, have been detected by the application. WiSense also provides other details about the detected devices such as their non-WiFi signal strengths, theri operating frequency bandwidth and channel information. Apart from the current real-time activity, application keeps track of eariler detected activity as well.</p>
+								   <div class="span6">
+								   		<h4>Non-WiFi Detected Devices</h4>
+								   		<p align="justify">Users can also see what all non-Wifi devices, interfering with their WiFi, have been detected by the application. WiSense also provides other details about the detected devices such as their non-WiFi signal strengths, theri operating frequency bandwidth and channel information. Apart from the current real-time activity, application keeps track of eariler detected activity as well.</p>
 								   </div>
 							  </div>
 							  <br>
 							 
-              				 <h4>SSID</h4>
 							  <div class="row">
-			 				  	   <div class="span2">
-								   		<a href="./img/overview/04_ssid.jpg"><img src="./img/overview/04_ssid.jpg" class="img-rounded"></a>
+								   <div class="span6">
+								   		<h4 align="right">SSID</h4>
+								   		<p align="justify">WiSense also captures neighboring SSID information and the SSID to which device is currently connected. It shows you the different wireless activity in the vicinity of the device.</p>
 								   </div>
-								   <div class="span7">
-								   		<p>WiSense also captures neighboring SSID information and the SSID to which device is currently connected. It shows you the different wireless activity in the vicinity of the device.</p>
+								   <div class="span3">
+								   		<a class="hovergallery" href="./img/overview/04_ssid.jpg"><img src="./img/overview/04_ssid.jpg" class="img-rounded"></a>
 								   </div>
 							  </div>
 							  <br>
 			 
-			 				  <h4>Channel Utlization</h4>
 							  <div class="row">
-			 				  	   <div class="span2">
-								   		<a href="./img/overview/05_cutil.jpg"><img src="./img/overview/05_cutil.jpg" class="img-rounded"></a>
+			 				  	   <div class="span3">
+								   		<a class="hovergallery" href="./img/overview/05_cutil.jpg"><img src="./img/overview/05_cutil.jpg" class="img-rounded"></a>
 								   </div>
-								   <div class="span7">
-								   		<p>[What is this feature? How is this feature useful?]</p>
+								   <div class="span6">
+								   		<h4>Channel Utlization</h4>
+								   		<p align="justify">[What is this feature? How is this feature useful?]</p>
 								   </div>
 							  </div>
 							  <br>
 							  
-							  <h4>Active Measurements</h4>
 							  <div class="row">
-			 				  	   <div class="span2">
-								   		<a href="./img/overview/06_am.jpg"><img src="./img/overview/06_am.jpg" class="img-rounded"></a>
+								   <div class="span6">
+								   		<h4 align="right">Active Measurements</h4>
+								   		<p align="justify">[What is this feature? How is this feature useful?]</p>
 								   </div>
-								   <div class="span7">
-								   		<p>[What is this feature? How is this feature useful?]</p>
+								   <div class="span3">
+								   		<a class="hovergallery" href="./img/overview/06_am.jpg"><img src="./img/overview/06_am.jpg" class="img-rounded"></a>
 								   </div>
 							  </div>
 							  <br>
@@ -148,13 +175,13 @@
         		 <section id="supported">
                     <div class="page-header">
                       <h3>Supported Devices</h3>
-        			  <p>Please note that only following devices are being supported currently for WiSense:</p>
+        			  <p align="justify">Please note that only following devices are being supported currently for WiSense:</p>
         			  <b><ul>
             			  <li>Galaxy Nexus</li>
             			  <li>Nexus 7</li>
         			  </ul></b>
-        			  
-        			  <p>We're working on getting it for other range of devices. So, please stay tuned!</p>
+        			  <img align="middle" width="40%" height="40%" src="./img/gettingstarted/nexus-7-galaxy-nexus-jelly-bean.jpg" alt="Devices"/>
+        			  <p align="justify">We're working on getting WiSense on other range of devices. So, please stay tuned!</p>
         		 
         			  </div>
         		  </section>
@@ -163,11 +190,11 @@
         		  <section id="download">
                     <div class="page-header">
                       <h3>Download</h3>
-        			  <p>You can now get WiSense on Google PlayStore. But, before downloading the application, please go through the <a href="./02_gettingstarted.html">Getting Started</a> document for instructions to update your kernel.</p>
+        			  <p align="justify">You can now get WiSense on Google PlayStore. But, before downloading the application, please go through the <a href="./02_gettingstarted.html">Getting Started</a> document for instructions to update your kernel.</p>
         			  
         			  <div class="alert alert-info">
         			  	   <h5>Is your device Supported?</h5> 
-        				   <p>Before downloading WiSense, please make sure that you have one of the devices mentioned in the <a href="#supported">Supported Devices</a> section.</p>
+        				   <p align="justify">Before downloading WiSense, please make sure that you have one of the devices mentioned in the <a href="#supported">Supported Devices</a> section.</p>
         			 </div>
         
         			  <a href="https://play.google.com/store/apps/details?id=com.wisense">
@@ -180,14 +207,14 @@
         		  <section id="needhelp">
                     <div class="page-header">
                       <h3>Need Help?</h3>	  
-                      <p>Please feel free to get in touch with us in case you need any help at any step. Whether it be updating the kernel, installing, downloading or using the application on your device, or anything else, we are here to help you throughout the installation process either through Skype, hangouts, phone or email. Please find our contact information in <a href="./03_contactus.html">Contact us</a> section, and we also welcome your comments in the <a href="#comments">Comments</a> Section.</p>		
+                      <p align="justify">Please feel free to get in touch with us in case you need any help at any step. Whether it be updating the kernel, installing, downloading or using the application on your device, or anything else, we are here to help you throughout the installation process either through Skype, hangouts, phone or email. Please find our contact information in <a href="./03_contactus.html">Contact us</a> section, and we also welcome your comments in the <a href="#comments">Comments</a> Section.</p>		
                   </section>
         		  
                   <section id="comments">
                     <div class="page-header">
                       <h3>Comments</h3>
         			  
-                      <p>We value your feedback. Please feel free to drop your comments or suggestions regarding the application below.</p>
+                      <p align="justify">We value your feedback. Please feel free to drop your comments or suggestions regarding the application below.</p>
         
         			  <!-- Begin Comments JavaScript Code -->
         			  <script type="text/javascript" async>if(window.location.href.indexOf('&routeignore=1') == -1){(function(){document.write('<div id="fcs_div"><a title="free comment script" href="http://www.freecommentscript.com">&nbsp;&nbsp;<b>Free HTML User Comments</b></a></div>');fcsfcs=document.createElement('script');fcsfcs.type="text/javascript";fcsfcs.src="http://www.freecommentscript.com/GetComments.php?p=5285494015365&s=" + escape(window.location) + "&Width=510&FontColor=111111&BackgroundColor=FFFFFF&FontSize=11&Size=10";setTimeout("document.getElementById('fcs_div').appendChild(fcsfcs)",1);})();}</script><noscript>
