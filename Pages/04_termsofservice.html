@@ -1,0 +1,85 @@
+?<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <title>WiSense</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="span12">
+          <nav class="navbar">
+            <div class="navbar-inner">
+
+            <!-- this is a title, if you put it here then it becomes part of the nav-->
+              <h1><a href="”#”">WiSense</a></h1>
+			  <h5>Realtime non-WiFi Device Detection in your pocket!</h5>
+
+              <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li><a href="./01_overview.html">Overview</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="./02_gettingstarted.html">Getting Started</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="./03_contactus.html">Contact us</a></li>
+                <li class="divider-vertical"></li>
+                <li class="active"><a href="./04_termsofservice.html">Terms of Service</a></li>
+                <li class="divider-vertical"></li>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+        <div class="row">
+			 <div class="span2">
+		     </div>
+
+        	 <div class="span9">
+			 
+          	 	  <section id="termsofservice">
+            	  		<h3>Terms of Service</h3>
+						
+						<p>The current version of this app, called WiSense, is being distributed for use at no cost to the end user for non-commercial use only, by the WiNGS laboratory at UW-Madison. The app can be used to collect spectral samples from the WiFi bands and to analyze these samples to determine which non-WiFi devices (Bluetooth, ZigBee, cordless phones, microwave ovens) are operating in the vicinity. The app also collects infrequent location information during its operation --- this allows us to analyze spatial behavior of spectral activity in the WiFi bands.</p>
+                        <br>
+						
+                        <h4>Data collection</h4>
+                        <p>In its default operation, the software will collect and send the following information to a server operated by the WiNGS laboratory. This information includes: (i) the spectral samples and optionally (ii) infrequent location information. Collection of location data can be disabled by the user. No personally identifiable information (such as IMEI number or MAC address) is collected. Finally, the user can access their own uploaded data from our server. </p>
+                      	<br>
+						
+                        <h4>User controls</h4>
+                        <p>The app provides users with  multiple settings through which they can control the above behavior. The app can be configured to determine location using WiFi or cellular signals only, which is known to be less accurate than using GPS. The app can also be configured to completely disable collection of location information. Finally, the app provides an option through which no data is uploaded to the server.</p>
+                      	<br>
+						
+                        <h4>Data plans</h4>
+                        <p>All data upload to the server is done only over WiFi. Even if the device has a 3G/4G data plan, the collected data is never uploaded using such a plan. Hence, the user needs to keep WiFi on.</p> 
+                      	<br>
+						
+                        <h4>Research use of data</h4>
+                        <p>The data being collected in the server is going to be used for research purposes to better understand and analyze spectral behavior. The location information collected will allow researchers to understand spatial behavior of wireless interference patterns across bands. The data collected does not carry any personalized information of users, and hence no such analysis of personalized behavior is going to be attempted on this data. The spectral sample data collected may be published by the WiNGS laboratory team through a public data repository. The actual location coordinates of any individual device collected through this app will never to put in the public domain.</p>
+                      	<br>
+						
+                        <h4>DISCLAIMER</h4>
+                        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+                      
+		  		  </section>
+       	     </div> <!--div class="span9"-->
+
+        <div class="row" id="main-content"></div>
+  	  
+        <footer class="row">
+          <hr>
+        </footer>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>
