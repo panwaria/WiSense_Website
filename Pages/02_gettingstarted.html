@@ -17,12 +17,12 @@
             <div class="navbar-inner">
 
             <!-- this is a title, if you put it here then it becomes part of the nav-->
-              <h1><a href="./01_overview.html">WiSense</a></h1>
-			  <h5>Realtime non-WiFi Device Detection in your pocket!</h5>
+              <h1><a href="./index.html">WiSense</a></h1>
+			  <h5>Realtime wireless diagnostic tool in your pocket!</h5>
 
               <ul class="nav">
                 <li class="divider-vertical"></li>
-                <li><a href="./01_overview.html">Overview</a></li>
+                <li><a href="./index.html">Overview</a></li>
                 <li class="divider-vertical"></li>
                 <li class="active"><a href="./02_gettingstarted.html">Getting Started</a></li>
                 <li class="divider-vertical"></li>
@@ -48,8 +48,8 @@
 
         	 <div class="span9">
 			           	 	  
-            	<h3>Getting Started</h3>
-				<p align="justify">Here, you can find instructions to install WiSense on your device. The whole setup operation should not take more than 15 - 20 minutes. We would recommend you to watch the video below before following starting with the set up.</p>
+            	<h3>Do it yourself installation instructions</h3>
+				<p align="justify">Here, you can find instructions to install WiSense on your device. The whole setup operation should not take more than 15 - 20 minutes. We would recommend you to watch the video below (to be updated soon) before following starting with the set up.</p>
 				<section id="instructionvideo">
 					<center><embed align="center" width="700" height="345" src="http://www.youtube.com/v/8gRVVAy-Uqs" type="application/x-shockwave-flash"/></center>
 				</section>
@@ -62,7 +62,7 @@
 							 
 						 <div class="alert alert-info">
         			  	   <h5>Is your device Supported?</h5> 
-        				   <p align="justify">Before starting with the set up, please make sure that you have one of the devices mentioned in the <b><a href="./01_overview.html#supported">Supported Devices</a></b> section.</p>
+        				   <p align="justify">Before starting with the set up, please make sure that you have one of the devices mentioned in the <b><a href="./index.html#supported">Supported Devices</a></b> section.</p>
         			 	 </div>
 						 
 						 <p>Following are the prerequisites to install WiSense on your Android device:</p>
@@ -70,20 +70,18 @@
 						 <ol>
     					 	<li><p>Any machine (Linux, Mac, Windows) with the Android SDK and tools installed (for adb and fastboot). You can also download (and unzip) Android's adb and fastboot tools from <a href="http://research.cs.wisc.edu/wings/projects/wisense/adb_download.html">here</a>.</p></li>
     						 
-							<li><p>Currently Cyanogenmod (<span style="color: FF0000">version 10.1 only</span>) and Android Jellybean (<span style="color: FF0000">Android 4.2.2 version only</span>) based WiSense updates for these devices are available. Please ensure that there is sufficient battery charge available on your device.
-							</p></li>
-							
-   							<li><p>[You can skip this step if the device is already unlocked]. Unlock bootloader for installing the WiSense platform on your android device. Instructions are available at the <span style="color: #FF0000">"Unlocking the bootloader"</span> section <a href="http://source.android.com/source/building-devices.html#unlocking-the-bootloader"> here</a>.
+    						<li><p>Make sure that the USB debug mode on your android device is enabled. Go to Settings &gt; Developer options. Turn on the "Developer options" toggle button (top right). Also select the "Android USB debugging" option, if not already done yet.
+    						<span style="color: FF0000"><b>Note:</b></span> On Android 4.2 and higher, the Developer options screen is hidden by default. To make it available, go to Settings
+    						&gt; "About phone" and tap Build number seven times. Return to the previous screen to find Developer options.</p></li>
+
+   							<li><p><span style="color: #FF0000">[You can skip this step if the device is already unlocked].</span> Unlock bootloader for installing the WiSense platform on your android device. Instructions are available at the <span style="color: #FF0000">"Unlocking the bootloader"</span> section <a href="http://source.android.com/source/building-devices.html#unlocking-the-bootloader"> here</a>.
     						Note that this will void your device warranty.</p></li>
     						
-							<li><p>Any Atheros AR9271 chipset based wireless adapter and a USB OTG cable to connect the wireless adapter to your android device. Check <a href="http://wireless.kernel.org/en/users/Drivers/ath9k_htc/devices">this list</a> for supported AR9271 based adapter's.</p>
+							<li><p>Any Atheros AR9271 chipset based wireless adapter (e.g., Netgear WNA1100, TP-LINK TL-WN722N etc.) and a USB OTG cable to connect the wireless adapter to your android device. Check <a href="http://wireless.kernel.org/en/users/Drivers/ath9k_htc/devices">this list</a> for all supported AR9271 based adapter's.</p>
     						<center><img class="img-rounded" width="60%" height="60%" src="./img/gettingstarted/usbcard_otgcable_new.jpg" alt="CARD_AND_OTG"/></li></center>
     						<br></li>
 							
-    						<li><p>Make sure that the USB debug mode on your android device is enabled. Go to Settings &gt; Developer options. Turn on the "Developer options" toggle button (top right). Also select the "Android USB debugging" option, if not already done yet.
 							<br>
-    						<span style="color: FF0000"><b>Note:</b></span> On Android 4.2 and higher, the Developer options screen is hidden by default. To make it available, go to Settings
-    						&gt; "About phone" and tap Build number seven times. Return to the previous screen to find Developer options.</p></li>
   						
 						</ol>
 							
@@ -101,8 +99,7 @@
 						 
                          <ol>
                             <li><p>Download the <span style="color: #FF0000">"Touch Recovery"</span> version of <a href="http://www.clockworkmod.com/rommanager">ClockWorkMod recovery image</a> on a machine based on your device type (Galaxy Nexus vs. Nexus 7).</p></li>
-                            <li><p>Using a terminal, go into the directory containing the Android adb and fastboot tools (downloaded in Step 1). Otherwise, if Android SDK is already installed on your machine, adb and fastboot tools should be in the "platform-tools" sub-directory of your Android SDK.</p></li>
-                            <li><p>Connect your Android device to the development machine using a USB cable. Make sure the "USB debugging mode" is enabled on your Android device.</p></li>
+                            <li><p>Using a terminal, go into the directory containing the Android adb and fastboot tools (downloaded in Step 1). Otherwise, if Android SDK is already installed on your machine, adb and fastboot tools should be in the "platform-tools" sub-directory of your Android SDK. Connect your Android device to the development machine using a USB cable. Make sure the "USB debugging mode" is enabled on your Android device.</p></li>
                             <li><p>Execute "./adb reboot-bootloader" on terminal to reboot the device into the bootloader mode.</p></li>
                             <li><p>Using the fastboot tool, flash ClockWorkMod Recovery onto your device by entering the following command: "fastboot flash recovery "&lt;path\\_to\\our_recovery_image.img&gt;" 
                             where the "your_recovery_image.img" is the name of the CWM file that you downloaded.</p></li>
@@ -112,17 +109,29 @@
   
 						 <h4>Step 2: Download and install the WiSense update image on your device</h4>
 						 <ol>
-                          	 <li><p>Download the correct WiSense update image to your machine based on your device type and OS from <a href="wisense_download.html">here</a>.</li>
-                          	 <li><p>Connect your Android device to the development machine using a USB cable and copy the WiSense image to your device using "adb push &lt;path_to_wisense_image_name.zip&gt; /mnt/sdcard/". The file transfer may take upto 20 seconds.</p></li>
-                          	 <li><p>After the copy is complete, boot the device into recovery mode by running the following command: "adb reboot-bootloader". Use the "Volume Up" button to go to the "Recovery Mode" option and select it (press power button). Now, you should see a screen similar to the one below:</p>
+                          	 <li><p>Download the SuperSU update zip file (for rooting) and correct WiSense update image to your machine based on your device type and OS from <a href="wisense_download.html">here</a>.</li>
+                          	 <li><p>Connect your Android device to the development machine using a USB cable and copy the WiSense image to your device using "./adb push &lt;path_to_wisense_image_name.zip&gt; /mnt/sdcard/". The file transfer may take upto 20 seconds.</p></li>
+                          	 <li><p>Also push the SuperSU updat using "./adb push &lt;path_to_supersu_file.zip&gt; /mnt/sdcard/". </p></li>
+                          	 <li><p>After the copy is complete, boot the device into recovery mode by running the following command: "./adb reboot-bootloader". Use the "Volume Up" button to go to the "Recovery Mode" option and select it (press power button). Now, you should see a screen similar to the one below:</p>
 							 <center><img class="img-rounded" width="20%" height="20%" src="./img/gettingstarted/cwn_main_menu.png" alt="CARD_AND_OTG"/></li></center>
 							 <br></li>
-                          	 <li><p><b><span style="color: #FF0000">Recommended:</span></b> Backup you current system image using CWM by selecting the "backup and restore" option in the main menu. Press backup option to start the system backup operation (may take upto couple of minutes). This operation creates a backup of your tablet image on the sdcard.</p></li>
+                          	 <li><p><b><span style="color: #FF0000">Recommended:</span></b> Backup you current system image using CWM by selecting the "backup and restore" option in the main menu. Press backup option to start the system backup operation (may take upto 10 minutes). This operation creates a backup of your tablet image on the sdcard.</p></li>
                           	 <li><p>Go back to the main menu and clear the cache by using the "wipe cache partition" option.</p></li>
-                          	 <li><p>Now, we are ready to install the WiSense update image. From the main menu, choose "install zip &gt; choose zip from sdcard" &gt; "choose zip from sdcard". Now find the downloaded Wisense update zip file in the menu (file maybe in the "0/" directory)  and click the filename to install. </p></li>
-                         	 <li><p>Go back to the main menu and reboot the device. Reboot operation may take upto a couple of minutes. You should now have the WiSense installed on your device! :) </p></li>
+                          	 <li><p>Now, we are ready to install the WiSense update image. From the main menu, choose "install zip &gt; choose zip from /sdcard". Now find the downloaded Wisense update zip file in the menu (file maybe in the "0/" directory)  and click the filename to install. </p></li>
+                          	 <li><p>Now, apply the SuperSU image update in the same fashion. From the main menu, choose "install zip &gt; choose zip from /sdcard". Now find the downloaded SuperSU zip file and click the filename to install. </p></li>
+                         	 <li><p>Go back to the main menu and reboot the device. Reboot operation may take upto a couple of minutes. You should now have the WiSense kernel update installed on your device! :) </p></li>
+                         	 <li><p>Finally, just install the WiSense Android app from Google's play store. Happy 'WiSense'ing !!! :)</p></li>
+                        </ol>
+                        </br>
+
+						<h4>Troubleshooting</h4>
+						 <ol>
+                          	 <li><p>SuperSU: Make sure that SuperSU is present in the main APPS menu. If not, goto to Settings &gt; Apps &gt; All &gt; SuperSU (shows the app info). Select "uninstall update" and make sure that the app is enabled. <a href="images/SuperSU_Troubleshoot.png">Click here for image snapshot.</a></p></li>
+                          	 <li><p>When you run WiSense for the first time, it will ask the user for root permissions. Make sure that you accept the request. </li>
+                          	 <li><p>Make sure the WiFi is enabled on your Android device while running WiSense. Otherwise, some features may not work correctly. </li>
                         </ol>
 						
+
         		 	</div>
         		</section>
         		  
@@ -138,6 +147,23 @@
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5266d35327ad387e"></script>
+<script type="text/javascript">
+    addthis.layers({
+        'theme' : 'transparent',
+        'share' : {
+                    'position' : 'right',
+                    'numPreferredServices' : 7
+                  },
+        'follow' : {
+                     'services' : [{'service': 'facebook', 'id': 'wisense'}]
+                   } 
+              });
+</script> 
+<!-- AddThis Smart Layers END -->
+
 
   </body>
 </html>
