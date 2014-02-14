@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	
+	<!--jquery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
 	<link rel="shortcut icon" href="./img/wisenseicon.ico">
+	
+	
+	<script type="text/javascript">
+$(function() {
+	$("#searchBox").hide();
+	
+	
+	$("#searchButton").click(function(){
+		$("#searchBox").show();
+	});
+});
+	</script>
   </head>
   
   <body>
@@ -30,13 +45,20 @@
                 <li class="divider-vertical"></li>
                 <li><a href="./04_termsofservice.html">Terms of Service</a></li>
                 <li class="divider-vertical"></li>
+				<li><a href="#" id="searchButton">Search by device id</a></li>
+                <li class="divider-vertical"></li>
                 </li>
               </ul>
             </div>
           </nav>
         </div>
       </header>
-
+		<div id="searchBox" style="height:50px">
+			<form id="searchForm" method="post" action="http://wirelessathome.wings.cs.wisc.edu/webUI/search.php">
+				Device Id: <input type="text" id="did" name="did">
+				<input type="submit" value="Submit">
+			</form>
+		</div>
         <div class="row">
 			 <div class="span2"/>
 		     </div>
