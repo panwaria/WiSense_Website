@@ -12,6 +12,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
 	<link rel="shortcut icon" href="./img/wisenseicon.ico">
 	
+	<!--
 	<script type="text/javascript">
 $(function() {
 	$("#searchBox").hide();
@@ -22,6 +23,34 @@ $(function() {
 	});
 });
 	</script>
+	-->
+	
+	<!-- javascript coding -->
+<!--
+<script>
+  // execute your scripts when the DOM is ready. this is a good habit
+  $(function() {
+
+        // select all desired input fields and attach tooltips to them
+      $("#searchForm :input").tooltip({
+
+      // place tooltip on the right edge
+      position: "bottom",
+
+      // a little tweaking of the position
+      offset: [2, 10],
+
+      // use the built-in fadeIn/fadeOut effect
+      effect: "fade",
+
+      // custom opacity setting
+      opacity: 0.7
+
+      });
+    });
+</script>
+-->
+	
 	<style type="text/css">
 
 .hovergallery img{
@@ -45,6 +74,20 @@ $(function() {
   opacity: 1;
 }
 
+.tooltip {
+    background-color:#000;
+    border:1px solid #fff;
+    padding:1px;
+    width:200px;
+    display:none;
+    color:#fff;
+    text-align:center;
+    font-size:8px;
+ 
+    /* outline radius for mozilla/firefox only */
+    -moz-box-shadow:0 0 10px #000;
+    -webkit-box-shadow:0 0 10px #000;
+}
 </style>
 	
 	
@@ -58,8 +101,21 @@ $(function() {
             <div class="navbar-inner">
 
             <!-- this is a title, if you put it here then it becomes part of the nav-->
-              <h1><a href="./index.html">WiSense</a></h1>
-			  <h5>Realtime wireless diagnostic tool in your pocket!</h5>
+			
+			<div class="row">
+				<div class="span6">
+					<h1><a href="./index.html">WiSense</a></h1>
+					<h5>Realtime wireless diagnostic tool in your pocket!</h5>
+				</div>
+				<div class="span5">
+					<div id="searchBox" style="height:50px; padding: 15px;">
+						<form id="searchForm" method="post" action="http://wirelessathome.wings.cs.wisc.edu/webUI/search.php">
+							Search by Device ID: <input type="text" id="did" name="did" placeholder="Enter your Device ID" title="Get your Device ID by pressing on 'Get Unique Key' menu option in your Wisense App">
+							<input type="submit" value="Search" style="padding: 5px;"/>
+						</form>
+					</div>
+				</div>
+			</div>
 
               <ul class="nav">
                 <li class="divider-vertical"></li>
@@ -71,20 +127,13 @@ $(function() {
                 <li class="divider-vertical"></li>
                 <li><a href="./04_termsofservice.html">Terms of Service</a></li>
                 <li class="divider-vertical"></li>
-				<li><a href="#" id="searchButton">Search by device id</a></li>
-                <li class="divider-vertical"></li>
                 </li>
               </ul>
             </div>
           </nav>
         </div>
       </header>
-		<div id="searchBox" style="height:50px">
-			<form id="searchForm" method="post" action="http://wirelessathome.wings.cs.wisc.edu/webUI/search.php">
-				Device Id: <input type="text" id="did" name="did">
-				<input type="submit" value="Submit">
-			</form>
-		</div>
+	  
         <div class="row">
 			 <div class="span2">
 			 	  <ul class="nav nav-pills nav-stacked" data-spy="affix">
