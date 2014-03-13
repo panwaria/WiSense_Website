@@ -11,6 +11,23 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
 	<link rel="shortcut icon" href="./img/wisenseicon.ico">
 	
+    <style>
+	.tooltip {
+	    background-color:#000;
+	    border:1px solid #fff;
+	    padding:1px;
+	    width:350px;
+	    display:none;
+	    color:#fff;
+	    text-align:center;
+	    font-size:10px;
+
+	    /* outline radius for mozilla/firefox only */
+	    -moz-box-shadow:0 0 10px #000;
+	    -webkit-box-shadow:0 0 10px #000;
+	}
+
+    </style>
 
   </head>
   
@@ -29,10 +46,19 @@
 				</div>
 				<div class="span5">
 					<div id="searchBox" style="height:50px; padding: 15px;">
+						<form id="searchForm" method="post" action="http://wirelessathome.wings.cs.wisc.edu/webUI/search.php" class="form-search">
+						    <label>Search by Device ID:</label>
+						    <div class="input-append">
+						        <input id="searchTextBox" type="text" id="did" name="did" class="search-query span2" placeholder="Device ID" title="Get it from Wisense App. Then, go to 'Menu Options > My Unique Key'." data-toggle="tooltip" data-placement="bottom">
+						        <button type="submit" class="btn btn-info">Search</button>
+						    </div>
+						</form>
+                            			<!--
 						<form id="searchForm" method="post" action="http://wirelessathome.wings.cs.wisc.edu/webUI/search.php">
 							Search by Device ID: <input type="text" id="did" name="did" placeholder="Enter your Device ID" title="Get your Device ID by pressing on 'Get Unique Key' menu option in your Wisense App">
 							<input type="submit" value="Search" style="padding: 5px;"/>
 						</form>
+						-->
 					</div>
 				</div>
 			</div>
@@ -142,6 +168,10 @@
 </script> 
 <!-- AddThis Smart Layers END -->
 
+<!-- Search Tooltip -->
+<script>
+    $('#searchTextBox').tooltip();
+</script>
 
   </body>
 </html>
